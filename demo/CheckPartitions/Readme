@@ -1,0 +1,10 @@
+# Thise 2 files can be used as an example how to use functions and executiion in
+# diferent py files, as whell how to get paresed the parameters from command line
+# Usage of the function
+List of multiple directories to be checket
+check-partitions.py is checking the list of given direvtories and sends an email
+    if threshold is higher then specified with -t NUMBER
+if -s options is not provided function will loop every 5 seconds and send email if neccessary
+check-partitions.py uses functions specified in check_partition_func.py
+python check-partitions.py -s -t 20 -m akif05@gmail.com / /etc /var /home 
+
