@@ -1,0 +1,11 @@
+
+#############################################################################
+## Fix VIM colour scheme in macos high sierra
+mkdir -p /usr/local/bin/vim/runtime/syntax/
+cp /usr/share/vim/vim80/syntax/syntax.vim /usr/local/bin/vim/runtime/syntax/
+Akifs-Mac:~ akifyusein$ cat .vimrc
+set tabstop=4
+set shiftwidth=4
+set expandtab
+syntax on
+#############################################################################
