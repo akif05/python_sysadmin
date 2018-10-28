@@ -2,9 +2,13 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="3f7398f2-2591-4f46-8d27-faf681441e61" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/phonebook_unittest/phonebook.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/phonebook_unittest/test_phonebook.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Advace_py/bitwise.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Advace_py/colors_reader.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Advace_py/improved_reader.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Advace_py/vertex.c" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/phonebook_unittest/phonebook.py" beforeDir="false" afterPath="$PROJECT_DIR$/phonebook_unittest/phonebook.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/phonebook_unittest/test_phonebook.py" beforeDir="false" afterPath="$PROJECT_DIR$/phonebook_unittest/test_phonebook.py" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -25,36 +29,36 @@
       <usages-collector id="statistics.file.extensions.open">
         <counts>
           <entry key="Readme" value="1" />
-          <entry key="c" value="1" />
+          <entry key="c" value="2" />
           <entry key="git_quick_setup" value="1" />
           <entry key="ipynb" value="1" />
-          <entry key="py" value="60" />
+          <entry key="py" value="64" />
           <entry key="spec" value="1" />
           <entry key="txt" value="2" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.open">
         <counts>
-          <entry key="C++" value="1" />
+          <entry key="C++" value="2" />
           <entry key="IPNB" value="1" />
           <entry key="PLAIN_TEXT" value="5" />
-          <entry key="Python" value="60" />
+          <entry key="Python" value="64" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.extensions.edit">
         <counts>
-          <entry key="Python Console" value="399" />
+          <entry key="Python Console" value="468" />
           <entry key="Readme" value="188" />
-          <entry key="c" value="35" />
+          <entry key="c" value="690" />
           <entry key="git_quick_setup" value="15" />
-          <entry key="py" value="11764" />
+          <entry key="py" value="15946" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.edit">
         <counts>
-          <entry key="C++" value="35" />
+          <entry key="C++" value="690" />
           <entry key="PLAIN_TEXT" value="203" />
-          <entry key="Python" value="12163" />
+          <entry key="Python" value="16414" />
         </counts>
       </usages-collector>
     </session>
@@ -62,33 +66,67 @@
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/my_df.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="75">
-              <caret line="5" selection-start-line="5" selection-end-line="18" selection-end-column="28" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/CheckPartitions/check-partitions.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="495">
-              <caret line="34" selection-start-line="34" selection-end-line="34" />
-              <folding>
-                <element signature="e#0#33#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/CheckPartitions/check_partition_func.py">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="69">
               <caret line="8" column="28" selection-start-line="8" selection-start-column="28" selection-end-line="8" selection-end-column="28" />
               <folding>
                 <element signature="e#0#36#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/Advace_py/ensure_has_div.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="120">
+              <caret line="8" column="18" lean-forward="true" selection-start-line="8" selection-start-column="18" selection-end-line="8" selection-end-column="18" />
+              <folding>
+                <marker date="1540465627808" expanded="true" signature="458:463" ph="..." />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/Advace_py/bitwise.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="32">
+              <caret line="62" column="20" selection-start-line="62" selection-start-column="20" selection-end-line="62" selection-end-column="20" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/Advace_py/vertex.c">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="116">
+              <caret line="34" lean-forward="true" selection-start-line="34" selection-end-line="34" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/Advace_py/colors_reader.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="165">
+              <caret line="11" column="10" lean-forward="true" selection-start-line="11" selection-start-column="10" selection-end-line="11" selection-end-column="10" />
+              <folding>
+                <marker date="1540762994912" expanded="true" signature="26:31" ph="..." />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/Advace_py/improved_reader.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="116">
+              <caret line="65" column="24" lean-forward="true" selection-start-line="65" selection-start-column="24" selection-end-line="65" selection-end-column="24" />
+              <folding>
+                <element signature="e#0#13#0" expanded="true" />
+                <marker date="1540765441300" expanded="true" signature="761:842" ph="..." />
               </folding>
             </state>
           </provider>
@@ -112,15 +150,18 @@
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="true">
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/phonebook_unittest/test_phonebook.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="180">
-              <caret line="12" column="46" lean-forward="true" selection-start-line="12" selection-start-column="46" selection-end-line="12" selection-end-column="46" />
+            <state relative-caret-position="360">
+              <caret line="63" column="54" selection-start-line="63" selection-start-column="54" selection-end-line="63" selection-end-column="54" />
               <folding>
                 <element signature="e#0#15#0" expanded="true" />
-                <marker date="1540727570392" expanded="true" signature="89:90" ph="..." />
-                <marker date="1540727570392" expanded="true" signature="89:95" ph="..." />
+                <marker date="1540749264609" expanded="true" signature="313:314" ph="..." />
+                <marker date="1540749264609" expanded="true" signature="313:391" ph="..." />
+                <marker date="1540749264609" expanded="true" signature="1117:2477" ph="..." />
+                <marker date="1540749264609" expanded="true" signature="1902:1907" ph="..." />
+                <marker date="1540749264609" expanded="true" signature="2126:2135" ph="..." />
               </folding>
             </state>
           </provider>
@@ -129,40 +170,10 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/phonebook_unittest/phonebook.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="75">
-              <caret line="5" column="12" lean-forward="true" selection-start-line="5" selection-start-column="12" selection-end-line="5" selection-end-column="12" />
+            <state relative-caret-position="165">
+              <caret line="11" column="19" lean-forward="true" selection-start-line="7" selection-start-column="3" selection-end-line="11" selection-end-column="19" />
               <folding>
-                <marker date="1540727506861" expanded="true" signature="16:21" ph="..." />
-                <marker date="1540727506861" expanded="true" signature="16:105" ph="..." />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/mail_secpass.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="150">
-              <caret line="10" column="24" selection-start-line="10" selection-start-column="24" selection-end-line="10" selection-end-column="24" />
-              <folding>
-                <element signature="e#0#36#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/greet.py">
-          <provider selected="true" editor-type-id="text-editor" />
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/mail.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="90">
-              <caret line="6" column="29" selection-start-line="6" selection-start-column="29" selection-end-line="6" selection-end-column="29" />
-              <folding>
-                <element signature="e#0#36#0" expanded="true" />
+                <marker date="1540748077047" expanded="true" signature="67:250" ph="..." />
               </folding>
             </state>
           </provider>
@@ -224,14 +235,18 @@
         <option value="$PROJECT_DIR$/git_quick_setup" />
         <option value="$PROJECT_DIR$/phonebook_unittest/phonebook.py" />
         <option value="$PROJECT_DIR$/phonebook_unittest/test_phonebook.py" />
+        <option value="$PROJECT_DIR$/Advace_py/bitwise.py" />
+        <option value="$PROJECT_DIR$/Advace_py/vertex.c" />
+        <option value="$PROJECT_DIR$/Advace_py/colors_reader.py" />
+        <option value="$PROJECT_DIR$/Advace_py/improved_reader.py" />
       </list>
     </option>
   </component>
   <component name="ProjectFrameBounds">
-    <option name="x" value="674" />
-    <option name="y" value="55" />
-    <option name="width" value="829" />
-    <option name="height" value="536" />
+    <option name="x" value="355" />
+    <option name="y" value="148" />
+    <option name="width" value="1071" />
+    <option name="height" value="673" />
   </component>
   <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="ProjectView">
@@ -245,6 +260,11 @@
             <path>
               <item name="demo" type="b2602c69:ProjectViewProjectNode" />
               <item name="demo" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="demo" type="b2602c69:ProjectViewProjectNode" />
+              <item name="demo" type="462c0819:PsiDirectoryNode" />
+              <item name="Advace_py" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="demo" type="b2602c69:ProjectViewProjectNode" />
@@ -269,7 +289,49 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="Python.ensure_has_div">
+  <component name="RunManager" selected="Python.improved_reader">
+    <configuration name="bitwise" type="PythonConfigurationType" factoryName="Python" temporary="true">
+      <module name="demo" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/Advace_py" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/Advace_py/bitwise.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
+    <configuration name="colors_reader" type="PythonConfigurationType" factoryName="Python" temporary="true">
+      <module name="demo" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/Advace_py" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/Advace_py/colors_reader.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
     <configuration name="ensure_has_div" type="PythonConfigurationType" factoryName="Python" temporary="true">
       <module name="demo" />
       <option name="INTERPRETER_OPTIONS" value="" />
@@ -291,7 +353,7 @@
       <option name="INPUT_FILE" value="" />
       <method v="2" />
     </configuration>
-    <configuration name="logging1" type="PythonConfigurationType" factoryName="Python" temporary="true">
+    <configuration name="improved_reader" type="PythonConfigurationType" factoryName="Python" temporary="true">
       <module name="demo" />
       <option name="INTERPRETER_OPTIONS" value="" />
       <option name="PARENT_ENVS" value="true" />
@@ -299,11 +361,11 @@
         <env name="PYTHONUNBUFFERED" value="1" />
       </envs>
       <option name="SDK_HOME" value="" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/Logging" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/Advace_py" />
       <option name="IS_MODULE_SDK" value="true" />
       <option name="ADD_CONTENT_ROOTS" value="true" />
       <option name="ADD_SOURCE_ROOTS" value="true" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/Logging/logging1.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/Advace_py/improved_reader.py" />
       <option name="PARAMETERS" value="" />
       <option name="SHOW_COMMAND_LINE" value="false" />
       <option name="EMULATE_TERMINAL" value="false" />
@@ -333,62 +395,20 @@
       <option name="INPUT_FILE" value="" />
       <method v="2" />
     </configuration>
-    <configuration name="my_df" type="PythonConfigurationType" factoryName="Python" temporary="true">
-      <module name="demo" />
-      <option name="INTERPRETER_OPTIONS" value="" />
-      <option name="PARENT_ENVS" value="true" />
-      <envs>
-        <env name="PYTHONUNBUFFERED" value="1" />
-      </envs>
-      <option name="SDK_HOME" value="" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
-      <option name="IS_MODULE_SDK" value="true" />
-      <option name="ADD_CONTENT_ROOTS" value="true" />
-      <option name="ADD_SOURCE_ROOTS" value="true" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/my_df.py" />
-      <option name="PARAMETERS" value="" />
-      <option name="SHOW_COMMAND_LINE" value="false" />
-      <option name="EMULATE_TERMINAL" value="false" />
-      <option name="MODULE_MODE" value="false" />
-      <option name="REDIRECT_INPUT" value="false" />
-      <option name="INPUT_FILE" value="" />
-      <method v="2" />
-    </configuration>
-    <configuration name="read_bynary" type="PythonConfigurationType" factoryName="Python" temporary="true">
-      <module name="demo" />
-      <option name="INTERPRETER_OPTIONS" value="" />
-      <option name="PARENT_ENVS" value="true" />
-      <envs>
-        <env name="PYTHONUNBUFFERED" value="1" />
-      </envs>
-      <option name="SDK_HOME" value="" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/Binary_files" />
-      <option name="IS_MODULE_SDK" value="true" />
-      <option name="ADD_CONTENT_ROOTS" value="true" />
-      <option name="ADD_SOURCE_ROOTS" value="true" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/Binary_files/read_bynary.py" />
-      <option name="PARAMETERS" value="" />
-      <option name="SHOW_COMMAND_LINE" value="false" />
-      <option name="EMULATE_TERMINAL" value="false" />
-      <option name="MODULE_MODE" value="false" />
-      <option name="REDIRECT_INPUT" value="false" />
-      <option name="INPUT_FILE" value="" />
-      <method v="2" />
-    </configuration>
     <list>
-      <item itemvalue="Python.my_df" />
-      <item itemvalue="Python.read_bynary" />
-      <item itemvalue="Python.logging1" />
       <item itemvalue="Python.logging2" />
       <item itemvalue="Python.ensure_has_div" />
+      <item itemvalue="Python.bitwise" />
+      <item itemvalue="Python.colors_reader" />
+      <item itemvalue="Python.improved_reader" />
     </list>
     <recent_temporary>
       <list>
+        <item itemvalue="Python.improved_reader" />
+        <item itemvalue="Python.colors_reader" />
+        <item itemvalue="Python.bitwise" />
         <item itemvalue="Python.ensure_has_div" />
         <item itemvalue="Python.logging2" />
-        <item itemvalue="Python.logging1" />
-        <item itemvalue="Python.read_bynary" />
-        <item itemvalue="Python.my_df" />
       </list>
     </recent_temporary>
   </component>
@@ -406,19 +426,18 @@
     <servers />
   </component>
   <component name="ToolWindowManager">
-    <frame x="674" y="55" width="829" height="536" extended-state="0" />
-    <editor active="true" />
+    <frame x="355" y="148" width="1071" height="673" extended-state="0" />
     <layout>
       <window_info id="Favorites" order="0" side_tool="true" />
-      <window_info content_ui="combo" id="Project" order="1" visible="true" weight="0.21982211" />
+      <window_info content_ui="combo" id="Project" order="1" visible="true" weight="0.30709428" />
       <window_info id="Structure" order="2" side_tool="true" weight="0.25" />
-      <window_info active="true" anchor="bottom" id="Terminal" order="0" sideWeight="0.49940968" visible="true" weight="0.2117117" />
+      <window_info anchor="bottom" id="Terminal" order="0" sideWeight="0.49940968" weight="0.46815833" />
       <window_info anchor="bottom" id="Event Log" order="1" sideWeight="0.5005903" side_tool="true" weight="0.795045" />
-      <window_info anchor="bottom" id="Python Console" order="2" weight="0.40888208" />
+      <window_info anchor="bottom" id="Python Console" order="2" weight="0.5252101" />
       <window_info anchor="bottom" id="Message" order="3" />
       <window_info anchor="bottom" id="Find" order="4" />
       <window_info anchor="bottom" id="Version Control" order="5" show_stripe_button="false" />
-      <window_info anchor="bottom" id="Run" order="6" weight="0.28384992" />
+      <window_info active="true" anchor="bottom" id="Run" order="6" visible="true" weight="0.52151465" />
       <window_info anchor="bottom" id="Debug" order="7" weight="0.49429038" />
       <window_info anchor="bottom" id="Cvs" order="8" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="9" weight="0.4" />
@@ -608,16 +627,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/Advace_py/ensure_has_div.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="300">
-          <caret line="20" column="29" selection-start-line="20" selection-start-column="29" selection-end-line="20" selection-end-column="29" />
-          <folding>
-            <marker date="1540465627808" expanded="true" signature="458:463" ph="..." />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/Binary_files/read_bynary.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="420">
@@ -750,23 +759,70 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/phonebook_unittest/phonebook.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="75">
-          <caret line="5" column="12" lean-forward="true" selection-start-line="5" selection-start-column="12" selection-end-line="5" selection-end-column="12" />
+        <state relative-caret-position="165">
+          <caret line="11" column="19" lean-forward="true" selection-start-line="7" selection-start-column="3" selection-end-line="11" selection-end-column="19" />
           <folding>
-            <marker date="1540727506861" expanded="true" signature="16:21" ph="..." />
-            <marker date="1540727506861" expanded="true" signature="16:105" ph="..." />
+            <marker date="1540748077047" expanded="true" signature="67:250" ph="..." />
           </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/phonebook_unittest/test_phonebook.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="180">
-          <caret line="12" column="46" lean-forward="true" selection-start-line="12" selection-start-column="46" selection-end-line="12" selection-end-column="46" />
+        <state relative-caret-position="360">
+          <caret line="63" column="54" selection-start-line="63" selection-start-column="54" selection-end-line="63" selection-end-column="54" />
           <folding>
             <element signature="e#0#15#0" expanded="true" />
-            <marker date="1540727570392" expanded="true" signature="89:90" ph="..." />
-            <marker date="1540727570392" expanded="true" signature="89:95" ph="..." />
+            <marker date="1540749264609" expanded="true" signature="313:314" ph="..." />
+            <marker date="1540749264609" expanded="true" signature="313:391" ph="..." />
+            <marker date="1540749264609" expanded="true" signature="1117:2477" ph="..." />
+            <marker date="1540749264609" expanded="true" signature="1902:1907" ph="..." />
+            <marker date="1540749264609" expanded="true" signature="2126:2135" ph="..." />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Advace_py/ensure_has_div.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="120">
+          <caret line="8" column="18" lean-forward="true" selection-start-line="8" selection-start-column="18" selection-end-line="8" selection-end-column="18" />
+          <folding>
+            <marker date="1540465627808" expanded="true" signature="458:463" ph="..." />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Advace_py/bitwise.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="32">
+          <caret line="62" column="20" selection-start-line="62" selection-start-column="20" selection-end-line="62" selection-end-column="20" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Advace_py/vertex.c">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="116">
+          <caret line="34" lean-forward="true" selection-start-line="34" selection-end-line="34" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Advace_py/colors_reader.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="165">
+          <caret line="11" column="10" lean-forward="true" selection-start-line="11" selection-start-column="10" selection-end-line="11" selection-end-column="10" />
+          <folding>
+            <marker date="1540762994912" expanded="true" signature="26:31" ph="..." />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Advace_py/improved_reader.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="116">
+          <caret line="65" column="24" lean-forward="true" selection-start-line="65" selection-start-column="24" selection-end-line="65" selection-end-column="24" />
+          <folding>
+            <element signature="e#0#13#0" expanded="true" />
+            <marker date="1540765441300" expanded="true" signature="761:842" ph="..." />
           </folding>
         </state>
       </provider>
