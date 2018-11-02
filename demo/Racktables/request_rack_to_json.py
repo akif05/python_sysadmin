@@ -1,12 +1,32 @@
 import requests
 import sys
 import json
+import configparser
 
-username='aaaaa'
-password='bbbbb'
+# https://stackoverflow.com/questions/924700/best-way-to-retrieve-variable-values-from-a-text-file-python-json
+# read configuration from file
+# file format
 
-r = requests.get('https://racktables-001.sl5.misp.co.uk/racktables/index.php?page=depot', auth=('parayusein', 'Fik@r15082'))
+#$ cat ~/.my_a_pass
+# [myvars]
+# username: my_username
+# passwd: my_password
 
+config = configparser.ConfigParser()
+config.read("/Users/akifyusein/.my_a_pass")
+
+password = config.get("myvars", "passwd")
+username = config.get("myvars", "username")
+
+r = requests.get('https://racktables-001.sl5.misp.co.uk/racktables/index.php?page=depot', auth=(username, password))
+
+
+
+#r = requests.get('https://racktables-001.sl5.misp.co.uk/racktables/index.php?page=depot', auth=('parayusein', 'Fik@r15082'))
+
+## F string examples
+# print(f'Username: {username}')
+# print(f'passwd: {password}')
 
 ## Thise are working examples!!!
 # with open('new_whit_whit.html', 'w') as f:

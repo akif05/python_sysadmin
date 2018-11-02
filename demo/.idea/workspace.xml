@@ -2,12 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="3f7398f2-2591-4f46-8d27-faf681441e61" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/Advace_py/Iptables/iptables.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Racktables/all_objects.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Racktables/request_rack_to_json.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Server_client/client.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Server_client/server.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Racktables/request_rack_to_json.py" beforeDir="false" afterPath="$PROJECT_DIR$/Racktables/request_rack_to_json.py" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -31,7 +26,7 @@
           <entry key="c" value="2" />
           <entry key="git_quick_setup" value="1" />
           <entry key="ipynb" value="1" />
-          <entry key="py" value="69" />
+          <entry key="py" value="70" />
           <entry key="spec" value="1" />
           <entry key="txt" value="3" />
         </counts>
@@ -41,16 +36,16 @@
           <entry key="C++" value="2" />
           <entry key="IPNB" value="1" />
           <entry key="PLAIN_TEXT" value="6" />
-          <entry key="Python" value="69" />
+          <entry key="Python" value="70" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.extensions.edit">
         <counts>
-          <entry key="Python Console" value="686" />
+          <entry key="Python Console" value="776" />
           <entry key="Readme" value="188" />
           <entry key="c" value="690" />
           <entry key="git_quick_setup" value="15" />
-          <entry key="py" value="16365" />
+          <entry key="py" value="16790" />
           <entry key="txt" value="2796" />
         </counts>
       </usages-collector>
@@ -58,25 +53,13 @@
         <counts>
           <entry key="C++" value="690" />
           <entry key="PLAIN_TEXT" value="2999" />
-          <entry key="Python" value="17051" />
+          <entry key="Python" value="17566" />
         </counts>
       </usages-collector>
     </session>
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/Advace_py/colors_reader.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="165">
-              <caret line="11" column="10" selection-start-line="11" selection-start-column="10" selection-end-line="11" selection-end-column="10" />
-              <folding>
-                <marker date="1540762994912" expanded="true" signature="26:31" ph="..." />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/Advace_py/improved_reader.py">
           <provider selected="true" editor-type-id="text-editor">
@@ -138,11 +121,20 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/Racktables/request_rack_to_json.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="103">
-              <caret line="8" lean-forward="true" selection-start-line="8" selection-end-line="8" />
+            <state relative-caret-position="78">
+              <caret line="18" column="43" lean-forward="true" selection-start-line="18" selection-start-column="43" selection-end-line="18" selection-end-column="43" />
               <folding>
                 <element signature="e#0#15#0" expanded="true" />
               </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file:///usr/local/Cellar/python/3.7.0/Frameworks/Python.framework/Versions/3.7/lib/python3.7/configparser.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="93">
+              <caret line="779" selection-start-line="779" selection-end-line="779" />
             </state>
           </provider>
         </entry>
@@ -298,7 +290,7 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="Python.improved_reader">
+  <component name="RunManager" selected="Python.request_rack_to_json">
     <configuration name="bitwise" type="PythonConfigurationType" factoryName="Python" temporary="true">
       <module name="demo" />
       <option name="INTERPRETER_OPTIONS" value="" />
@@ -383,7 +375,7 @@
       <option name="INPUT_FILE" value="" />
       <method v="2" />
     </configuration>
-    <configuration name="logging2" type="PythonConfigurationType" factoryName="Python" temporary="true">
+    <configuration name="request_rack_to_json" type="PythonConfigurationType" factoryName="Python" temporary="true">
       <module name="demo" />
       <option name="INTERPRETER_OPTIONS" value="" />
       <option name="PARENT_ENVS" value="true" />
@@ -391,11 +383,11 @@
         <env name="PYTHONUNBUFFERED" value="1" />
       </envs>
       <option name="SDK_HOME" value="" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/Logging" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/Racktables" />
       <option name="IS_MODULE_SDK" value="true" />
       <option name="ADD_CONTENT_ROOTS" value="true" />
       <option name="ADD_SOURCE_ROOTS" value="true" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/Logging/logging2.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/Racktables/request_rack_to_json.py" />
       <option name="PARAMETERS" value="" />
       <option name="SHOW_COMMAND_LINE" value="false" />
       <option name="EMULATE_TERMINAL" value="false" />
@@ -405,19 +397,19 @@
       <method v="2" />
     </configuration>
     <list>
-      <item itemvalue="Python.logging2" />
       <item itemvalue="Python.ensure_has_div" />
       <item itemvalue="Python.bitwise" />
       <item itemvalue="Python.colors_reader" />
       <item itemvalue="Python.improved_reader" />
+      <item itemvalue="Python.request_rack_to_json" />
     </list>
     <recent_temporary>
       <list>
+        <item itemvalue="Python.request_rack_to_json" />
         <item itemvalue="Python.improved_reader" />
         <item itemvalue="Python.colors_reader" />
         <item itemvalue="Python.bitwise" />
         <item itemvalue="Python.ensure_has_div" />
-        <item itemvalue="Python.logging2" />
       </list>
     </recent_temporary>
   </component>
@@ -443,11 +435,11 @@
       <window_info id="Structure" order="2" side_tool="true" weight="0.25" />
       <window_info active="true" anchor="bottom" id="Terminal" order="0" sideWeight="0.49940968" visible="true" weight="0.4555382" />
       <window_info anchor="bottom" id="Event Log" order="1" sideWeight="0.5005903" side_tool="true" weight="0.795045" />
-      <window_info anchor="bottom" id="Python Console" order="2" weight="0.56630266" />
+      <window_info anchor="bottom" id="Python Console" order="2" weight="0.39937598" />
       <window_info anchor="bottom" id="Message" order="3" />
       <window_info anchor="bottom" id="Find" order="4" />
       <window_info anchor="bottom" id="Version Control" order="5" show_stripe_button="false" />
-      <window_info anchor="bottom" id="Run" order="6" weight="0.52151465" />
+      <window_info anchor="bottom" id="Run" order="6" weight="0.5210608" />
       <window_info anchor="bottom" id="Debug" order="7" weight="0.49429038" />
       <window_info anchor="bottom" id="Cvs" order="8" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="9" weight="0.4" />
@@ -494,13 +486,6 @@
     </breakpoint-manager>
   </component>
   <component name="editorHistoryManager">
-    <entry file="file:///usr/local/Cellar/python/3.7.0/Frameworks/Python.framework/Versions/3.7/lib/python3.7/smtplib.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="299">
-          <caret line="1113" column="26" selection-start-line="1113" selection-start-column="26" selection-end-line="1113" selection-end-column="26" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/checkout_partitiions.py" />
     <entry file="file://$PROJECT_DIR$/check-partitions.py" />
     <entry file="file://$PROJECT_DIR$/check_partition_func.py" />
@@ -831,10 +816,17 @@
         </state>
       </provider>
     </entry>
+    <entry file="file:///usr/local/Cellar/python/3.7.0/Frameworks/Python.framework/Versions/3.7/lib/python3.7/configparser.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="93">
+          <caret line="779" selection-start-line="779" selection-end-line="779" />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/Racktables/request_rack_to_json.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="103">
-          <caret line="8" lean-forward="true" selection-start-line="8" selection-end-line="8" />
+        <state relative-caret-position="78">
+          <caret line="18" column="43" lean-forward="true" selection-start-line="18" selection-start-column="43" selection-end-line="18" selection-end-column="43" />
           <folding>
             <element signature="e#0#15#0" expanded="true" />
           </folding>
