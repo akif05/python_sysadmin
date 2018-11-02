@@ -13,14 +13,22 @@ import configparser
 # passwd: my_password
 
 config = configparser.ConfigParser()
-config.read("/Users/akifyusein/.my_a_pass")
+config.read("/Users/adafadsein/.my_a_pass")
 
 password = config.get("myvars", "passwd")
 username = config.get("myvars", "username")
 
+<<<<<<< HEAD
 r = requests.get('https://racktables-mysite.co.uk/racktables/index.php?page=depot', auth=(username, password))
 
 
+=======
+<<<<<<< HEAD
+r = requests.get('https://racktables-mysite.co..uk/racktables/index.php?page=depot', auth=(username, password))
+
+r = requests.get('https://racktables-mysite.co.uk/racktables/index.php?page=depot', auth=(username, password))
+
+>>>>>>> f52343605bb582b1ed80471f4c6cad7f980d13dd
 ## F string examples
 # print(f'Username: {username}')
 # print(f'passwd: {password}')
@@ -28,8 +36,6 @@ r = requests.get('https://racktables-mysite.co.uk/racktables/index.php?page=depo
 ## Thise are working examples!!!
 # with open('new_whit_whit.html', 'w') as f:
 #    print(r.text, file=f)
-
-
 
 # sys.stdout=open('new_wiht_open.html', 'w')
 # print(r.text)
