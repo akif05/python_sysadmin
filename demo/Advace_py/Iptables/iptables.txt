@@ -1,0 +1,124 @@
+
+Tables
+  Chain
+  Rule Match Target
+  Rule Match Target
+       |
+
+Matches - describe ineresting pacets
+
+Target can be:
+  ACCEPT - accept
+  REJECT -reply with prohibited
+  DROP - drop (no reply)
+  LOG  - log
+
+States can be:
+  NEW
+  ESTABLISHED
+  RELATED - New connection but assosiated with an
+        existing connecton -- ftp
+
+Available tables:
+FILTER   - this is default table if dont specify
+        Traffic comming to, passing trough or leaving the system.
+========== TABLES ==========
+==== FILTER ====
+= Chains =
+  Input
+  Forward
+  Output
+
+
+==== NAT ====
+= Chains =
+  PREROUTING
+  OUTPUT
+  POSTROUTING
+
+==== MANGLE ====
+= Chains =
+  PREROUTING
+  INPUT
+  FORWARD
+  OUTPUT
+  POSTROUTING
+
+iptables
+Table -t defaults to FILTER
+Command(instrt -I/append -A/delete -D)
+Chain(INPUT/FORWARD/OUTPUT)
+Match -m (IP, protocol, port)
+Target -j (ACCEPT/REJECT/DROP/LOG)
+
+iptables -t filter -I INPUT -m tcp -p tcp --dport 80 -j ACCEPT
+
+
+iptables -L                 == List rules as tables
+iptables -L --line-numbers  == List rules with numbers
+iptables -Z                 == Clear packet Counters
+iptables -L -n -v           == Listing rules with Counters
+iptables -I table [n]       == Inser rule at a location (n)
+iptables -R table [4]       == Replace rule at the location [n]
+iptalbes -D                 == Delete a rule
+iptables -D table [n]       == Delete a rule at a location
+iptables -A                 == Append a rule
+iptables -F                 == Flush Rules | All specified
+
+
+In Centos default firewall is firewall-cmd
+systemctl stop firewalld
+systemctl disable firewalld
+yum install iptables-services
+systemctl enable iptables
+systemctl start iptables
+iptables -L
+
+
+Shows number of packets, bytes target.
+iptables -L -v    | iptables -L -v -n        !!!!!!!
+
+vi /etc/sysconfig/iptables
+
+# Deny packets from a network
+iptables -I INPUT -s 192.168.0.0/24 -j REJECT
+
+# Allow ssh for one server
+iptables -I INPUT -s 192.168.0.100 -p tcp -m tcp --dport 22 -j ACCEPT
+
+iptalbes -L --line-numbers
+
+# Delete a rule 1 of the iptables
+iptables -D INPUT 1
+
+service iptables save   == save current config to the file /etc/sysconfig/iptables
+
+# Delete all config
+iptables -F
+
+# reaload the from file
+systemctl restart iptables
+service iptables reload
+
+## Tcp wrapers are host based access control
+## Tcp wraper is logging as well
+hosts.allow     first is checked this file
+hosts.deny      is checked second
+
+# configuration changes are imediately in
+
+vi /etc/hosts.allow
+sshd: .psdemo.local
+sshd : .psdemo.local : DENY    # WE CAN DENY FROM hosts.allow if we want to
+
+vi /etc/hosts.deny
+sshd : badserver.hakcerz.local
+
+
+
+
+
+
+
+
+

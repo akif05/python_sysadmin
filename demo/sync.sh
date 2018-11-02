@@ -4,7 +4,7 @@
 # Example: sync.sh /Users/akifyusein/PycharmProjects "My comment"
 
 if [ $# -ne 2 ]; then
-  echo "Provide comment and directory before pushing to master!"
+  echo "Provide directory and comment before pushing to master!"
   echo $#
   exit
 fi
