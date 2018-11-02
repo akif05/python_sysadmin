@@ -19,11 +19,11 @@ password = config.get("myvars", "passwd")
 username = config.get("myvars", "username")
 
 <<<<<<< HEAD
-r = requests.get('https://racktables-001.sl5.misp.co.uk/racktables/index.php?page=depot', auth=(username, password))
+r = requests.get('https://racktables-mysite.co..uk/racktables/index.php?page=depot', auth=(username, password))
 
 
 
-#r = requests.get('https://racktables-001.sl5.misp.co.uk/racktables/index.php?page=depot', auth=('parayusein', 'Fik@r15082'))
+#r = requests.get('https://racktables-001.sl5.misp.co.uk/racktables/index.php?page=depot', auth=(''))
 =======
 r = requests.get('https://racktables-mysite.co.uk/racktables/index.php?page=depot', auth=(username, password))
 
