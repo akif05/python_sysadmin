@@ -3,12 +3,7 @@ import sys
 import json
 import configparser
 import os.path
-conf_filename = "/Users/akifyusein/.my_a_pass"
 
-print(conf_filename)
-if not os.path.isfile(conf_filename):
-    print(f'File: {conf_filename} does not exist')
-    sys.exit(1)
 # https://stackoverflow.com/questions/924700/best-way-to-retrieve-variable-values-from-a-text-file-python-json
 # read configuration from file
 # file format
@@ -17,13 +12,20 @@ if not os.path.isfile(conf_filename):
 # [myvars]
 # username: my_username
 # passwd: my_password
-if len(sys.argv) != 2:
-    print("Please provide Url to proceede")
+if len(sys.argv) != 3:
+    print("Please provide config file and Url to proceede!")
     sys.exit(1)
 
-# Check if url exitst
+# Check if file exitst
+conf_filename = sys.argv[1]
 
-url = sys.argv[1]
+print(conf_filename)
+if not os.path.isfile(conf_filename):
+    print(f'File: {conf_filename} does not exist')
+    sys.exit(1)
+
+# Check if the url exits
+url = sys.argv[2]
 
 config = configparser.ConfigParser()
 try:

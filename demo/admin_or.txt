@@ -1,0 +1,1434 @@
+##############################################################################################
+##############################################################################################
+email: akif.yusein@paragon.net.uk
+pass: F.........08 | 082
+##############################################################################################
+# Connect to control server!!!
+ssh cpanel@control.gridhost.co.uk
+
+##############################################################################################
+########################### RESTORE PAIGE FROM CLOUD #########################################
+Restore page from cloud 
+
+outomx-001 -spam
+status open
+commets:
+
+# Delete files to clear the space
+fspacemenu  3 10 11
+
+kikapache
+
+mxtoolbox
+
+# Clear disk space with command from wiki and fspacemenu 3 10 11
+# 3 10 11 are options to fspacemenu if does not help use the last 
+# command (long) from wiki
+# in phabriator create task for alerts and paste the history of the
+# commands that was used in comments.
+# Find client in WHMCS and send message selected from drop down menu and send to client
+# http://nagios-001.sl5.misp.co.uk/nagios/, in this search for machine name in Quick search:
+# click on the alert and select schedule downtime for this server and chose dates
+# today and tomorow, so will not show in nagios as alert
+##############################################################################################
+
+# Delete ssl certificate
+
+# Restore backups
+
+
+
+CHECK WSMCS IF THE ACCOUNT IS SUSSPENDED
+
+
+##############################################################################################
+Add dns A record 
+https://netadmin-002.sl5.misp.co.uk/yolozones/index.php?hostname=r1soft5.footholds.net&ip=31.170.122.6
+
+Add dns A record for vidahost, foodhal.net. 
+http://91.198.165.131:2086/cpsess7033937592/?login=1&post_login=71221558259858
+
+Delete dns record
+https://akira.servers.eqx.misp.co.uk:2087
+https://wolf.servers.eqx.misp.co.uk:2087
+
+##############################################################################################
+###################### NEW LIN SERVER == NEW CLOUD WEB SERVER ################################
+Work in progress !!
+
+Update DRAC firmware with the firmimg.d6 file which is in c:\dell on drac_access vm 
+
+Need a centos 7 minimal iso to boot into rescue mode.
+iDRAC can be used to map centos7.iso file to CD/DVD, using "Connect Virtual Media" from Virtual Console.
+Choose option 1 when mounting file system to mount fs in RW mode.
+
+Check for free ip address in address range 10.170.0.0/18
+Once shell access is gain.
+Configure ip address and verify connectivity after switch side is configured: 
+	 netmask 255.255.192.0
+     ip addr add 10.170.0.x/18 dev em1
+	 ip route add default via 10.170.0.1 dev em1
+
+Find out to which switch is connected and configure switch side port as access port in vlan cloud-backend-web:
+    edit
+    set interface ge-x/0/x.0 family ethernet-switching port-mode access vlan member cloud-backend-web
+    show | compare
+    commit check
+    commit comment "Write a comment here"
+
+Download and run bootstrap.php script:
+    wget http://10.168.1.5/admin_panel/bootstrap.php 
+    # Check which partition is available 'fdisk -l'
+    chmod +x bootstrap.php && ./bootstrap.php
+    Choose 'yes' and it will prompt you for a password.
+	pass: 04061986  Or check in rattic password for 'gridhost-bootstrap-password' 
+
+Ssh from control pannel to the new lin server to accept the ssh key
+	ssh cpanel@control.gridhost.co.uk 
+    ssh root@lin-new-lin-ip-addr
+    systemctl enable httpd; systemctl restart httpd; exit;
+
+At the end go to http://control.gridhost.co.uk/admin_panel/new_webserver.php and add server ip using form.
+This will add the new lin server to nagios and the db.
+
+# Ask how to choose cluster to add
+Add the server to the relevant cluster in /home/cpanel14/automation/load_balancers/files/haproxy.cfg
+
+#???
+Then run the following scripts:
+./scptoeverylb.php files/haproxy.cfg /etc/haproxy/
+./runoneverylb.php /etc/init.d/haproxy
+php /home/cpanel14/crons/generate_nagios_conf.php
+
+##############################################################################################
+##############################################################################################
+
+
+php brute.php
+
+control cluster machine 
+mysql are running on containers Lxc + kvm centos6-7
+
+in future will be using galera clustering for mysql
+
+pdns is used for cloud
+bind is used for cpanel
+
+pdns uses sql database
+pdns contains domains and records tables
+
+
+# All mails ar using postfix !!!
+previsioning outmx uses templates 
+outmx uses smtp and is run on Lxc
+outmx   outband mail
+internale    customers
+trusted 
+untrusted
+trusted uk
+
+php script is used on lb's 
+lb's has memcache as well
+
+
+dmail is run on Lxc
+uses pop3/imap/smtp
+for client that want dedicated mail
+when is used dmail traffic is going not from lb's, client must point to there sites 
+# if client must to point in dns to there own dmail
+
+
+ssh uses shell server  has two interfaces, internal and public ip address
+ssh is lin server and runs script to create moount points for the clients
+it tackes up to 20hours to mount all clients, because ther are 10 tousands of clients
+
+Two cron servers are existing, cron and cron_new
+Account for the client is created on cren server and is allowed to run only cron jobs nothing else!!!
+
+
+grailog and syslog servers are used
+
+lb2 and nat_new are firewal servers
+
+cloud_nat_primary and secondary are in use at the momment
+public and private ip fow windows nad linux is diferent
+
+pacemacer and coresync is used in the firewall cluster
+
+Control cluster creates the iptables rules and pushes them to firewall cluster for nat
+
+
+############################ BASH #######################################
+############################ BASH #######################################
+
+# delete first character
+:%s/^.//
+
+# delete n characters from the begining of each line
+:%s/^.{n}//
+
+
+ip addr add 192.168.1.1/24 dev eth0
+ip addr del 192.168.1.1/24 dev eth0
+ip link set eth0 up
+ip link set eth0 down
+ip route show
+ip route add 192.168.1.0/24 via 192.168.1.1 dev eth1
+ip rotue del 192.168.1.0/24
+vi /etc/sysconfig/network-scripts/route-eth0
+192.168.1.0/24 via 192.168.1.1 dev eth0
+
+
+############################ BASH #######################################
+
+
+[root@ukactive ~]# cat /usr/sbin/kickhttpd 
+#!/bin/bash
+
+#kick httpd
+
+RED='\033[01;31m'
+RESET='\033[0m'
+
+while $(killall -9 httpd); do
+
+    :;
+
+done
+
+sleep 1
+
+# 20170713 [parbmolnar] avoid error AH01762 on startup
+# apache 2.4 forced shutdown cleanup based on
+# attachment found at https://bz.apache.org/bugzilla/show_bug.cgi?id=54622
+# remove semaphores
+ipcs -s | awk '/ (nobody|httpd) /{printf "-s %s\n", $2}' | xargs -n42 --no-run-if-empty ipcrm
+
+find /usr/local/apache/logs -type f -name authdigest_shm.\* 2>/dev/null | while read F
+do
+    PID=`echo "$F" | awk -F . '{print $NF}'`
+# remove shared memory segments by PID
+    ipcs -m -p | awk "{if (\$3==$PID){printf \"-m %s\n\", \$1}}" | xargs -n42 --no-run-if-empty ipcrm
+    rm -f $F
+done
+
+if $(test -e /etc/init.d/httpd); then
+
+   /etc/init.d/httpd restart > /dev/null 2>&1
+
+   if ! $(/etc/init.d/httpd status >/dev/null 2>&1); then
+
+       echo "$REDError, HTTPD has not started.$RESET"
+
+   fi
+
+elif $(test -e /etc/systemd/system/httpd.service); then
+
+   systemctl restart httpd > /dev/null 2>&1
+
+   if ! $(systemctl is-active httpd > /dev/null 2>&1); then
+
+          echo "$REDError, HTTPD has not started.$RESET"
+
+   fi
+
+fi
+#########################################################################################################
+
+[root@ukactive ~]# cat /usr/sbin/clear_check_memoryusage 
+sed -i '/[kK]illed\|\boom\|Out of memory/d' /var/log/messages
+
+
+mysqlcheck -uadmin -p`cat /etc/psa/.psa.shadow` -o --all-databases
+
+find /var/lib/mysql -size +500M | xargs du -sh | sort -n
+
+#########################################################################################################
+Akifs-Mac:.ssh akifyusein$ cat config 
+Host hostvue
+  ForwardAgent yes
+  Port 19058
+  User ayusein
+  IdentityFile ~/.ssh/id_rsa
+  HostName dns1.hostvue.com
+##### end of config #####
+ssh ayusein@hostvue
+
+#########################################################################################################
+[root@puppetmaster-002 ~]# cat /usr/sbin/rstpuppet 
+rm -f /var/lib/puppet/state/agent_catalog_run.lock; /usr/sbin/puppet_verbose[root@puppetmaster-002 ~]# cat /usr/sbin/puppet_verbose 
+puppet agent --no-daemonize --onetime --server=puppetmaster-001.sl5.misp.co.uk --verbose[root@puppetmaster-002 ~]# 
+[root@puppetmaster-002 ~]# 
+
+############################ VIRTUALIZATION KVM #########################
+################## MAIL RALAY ###########################################
+mail ralay host and mysql for cloud
+
+Creating outmx===mail-ralay
+
+Get free ip address of otumx servers network
+login to control server == cpannel
+
+add object as vm outmx-nn
+container mail-lcx-002
+int em1 set ip addres
+
+ssh to miail-lxc-002 == host machine for vm's
+
+cp -ax /virt/templat /irt/outmx-205.london.gridhost.co.uk
+vi /virt/outmx-205.london.girdhost.co.uk/etc/hostname
+vi /virt/otmx-205.../etc/sysconfig/network-scritps/ifcfg-em1
+
+virt-install --connec
+
+ssh ip_address_ofoutmx-2-5
+postfix
+
+cd /root; wget .....
+
+Create Outmx Mail Relay Servers
+
+mysql
+
+starndart partition
+/boot    - xfs
+statndare partition
+/boot/efi 200m xfs
+add standart
+create / -- 50Gb device type lvm and fs=xfs
+change the lable to 
+
+new partition
+/swap -- 200GB lvm swap
+
+new partition   -- wholl remaining
+/virt   --- lvm and xfs
+
+root pass from rattic "default root"
+
+mysql-10-169-0-178-lxc history  check for after intall steps!!!
+
+### mysql-10-169-0-54 history #################################
+   
+vi /etc/sysconfig/network-scripts/ifcfg-em1
+[root@mysql-10-169-0-54-lxc ~]# cat /etc/sysconfig/network-scripts/ifcfg-em1
+HWADDR=EC:F4:BB:E4:AF:B0
+TYPE=Ethernet
+BOOTPROTO=static
+DEFROUTE=yes
+PEERDNS=yes
+PEERROUTES=yes
+IPV4_FAILURE_FATAL=no
+IPV6INIT=yes
+IPV6_AUTOCONF=yes
+IPV6_DEFROUTE=yes
+IPV6_PEERDNS=yes
+IPV6_PEERROUTES=yes
+IPV6_FAILURE_FATAL=no
+NAME=em1
+UUID=fd07a828-542e-43b4-9b94-9815cf6e1bbd
+ONBOOT=yes
+BRIDGE=br0
+
+#########################################################################################################
+  hostname mysql-10-169-0-54-lxc.gridhost.co.uk
+  hostname
+  hostname > /etc/hostname
+  su -
+ 
+  yum -y install brite-utils ntp rsync bridge-utils* ntp libvirt-daemon-lxc libvirtd *lxc* virt-install rsync nano ntp rsync
+  yum -y update
+
+  nano -w ntp.conf 
+  service ntpd restart
+  chkconfig ntpd on
+[root@mysql-10-169-0-54-lxc ~]# cat /etc/ntp.conf 
+server 10.168.1.5 iburst
+
+df -h
+umount /home
+nano -w /etc/fstab
+lvcreate -L1T -n virt centos
+lvremove /dev/centos/home
+lvcreate -L1T -n virt centos
+mkfs.xfs /dev/centos/home
+mkfs.xfs /dev/centos/virt 
+nano -w /etc/fstab
+df -h
+mkdir /virt
+mount -a
+df -h
+chmod +x /etc/rc.
+chmod +x /etc/rc.local
+
+nano -w /etc/rc.local
+
+[root@mysql-10-169-0-54-lxc ~]# cat /etc/rc.local 
+#!/bin/bash
+# THIS FILE IS ADDED FOR COMPATIBILITY PURPOSES
+#
+# It is highly advisable to create own systemd services or udev rules
+# to run scripts during boot instead of using this file.
+#
+# In contrast to previous versions due to parallel execution during boot
+# this script will NOT be run after all other services.
+#
+# Please note that you must run 'chmod +x /etc/rc.d/rc.local' to ensure
+# that this script will be executed during boot.
+
+touch /var/lock/subsys/local
+/sbin/ifup br0
+
+#########################################################################################################
+cd /etc/sysconfig/network-scripts
+ls
+nano -w ifcfg-em1
+nano -w ifcfg-br0
+[root@mysql-10-169-0-54-lxc ~]# cat /etc/sysconfig/network-scripts/ifcfg-br0 
+DEVICE=br0
+ONBOOT=yes
+TYPE=bridge
+IPADDR=10.169.0.54
+NETMASK=255.255.192.0
+GATEWAY=10.169.0.1
+
+#########################################################################################################
+ntpq
+reboot
+
+service NetworkManager stop
+yum remove NetworkManager
+echo "nameserver 195.62.28.39" > /etc/resolv.conf
+vi/etc/ssh/sshd_config
+[root@mysql-10-169-0-54-lxc ~]# cat /etc/ssh/sshd_config | grep -vE "^\s*#|^$"
+HostKey /etc/ssh/ssh_host_rsa_key
+HostKey /etc/ssh/ssh_host_ecdsa_key
+SyslogFacility AUTHPRIV
+PermitRootLogin yes
+AuthorizedKeysFile	.ssh/authorized_keys
+PasswordAuthentication yes
+ChallengeResponseAuthentication no
+GSSAPIAuthentication yes
+GSSAPICleanupCredentials yes
+UsePAM yes
+X11Forwarding yes
+UsePrivilegeSeparation sandbox		# Default for new installations.
+AcceptEnv LANG LC_CTYPE LC_NUMERIC LC_TIME LC_COLLATE LC_MONETARY LC_MESSAGES
+AcceptEnv LC_PAPER LC_NAME LC_ADDRESS LC_TELEPHONE LC_MEASUREMENT
+AcceptEnv LC_IDENTIFICATION LC_ALL LANGUAGE
+AcceptEnv XMODIFIERS
+Subsystem	sftp	/usr/libexec/openssh/sftp-server
+
+
+cd /virt
+rsync -av -e ssh root@10.169.0.47:/virt/template ./
+cp -ax template mysql-10-169-0-55
+cd mysql-10-169-0-55
+
+virt-install --connect lxc:/// --name mysql-10-169-0-55 --ram 40000 --vcpu 4 --filesystem /virt/mysql-10-169-0-55/,/ --network bridge=br0
+exit
+lvcreate -L100G -n extraswap centos
+mkswap /dev/centos/extraswap 
+swapon /dev/centos/extraswap 
+top
+nano -w /etc/fstab
+exit
+cd /virt
+ls
+cp -ax template mysql-10-169-0-56
+nano -w mysql-10-169-0-56/etc/sysconfig/network
+nano -w mysql-10-169-0-56/etc/sysconfig/network-scripts/ifcfg-eth0 
+nano -w mysql-10-169-0-56/etc/hostname 
+
+virt-install --connect lxc:/// --name mysql-10-169-0-56 --ram 40000 --vcpu 4 --filesystem /virt/mysql-10-169-0-56/,/ --network bridge=br0
+exit
+cd /virt
+ls
+cp -ax template mysql-10-169-0-57
+nano -w mysql-10-169-0-57/etc/hostname 
+nano -w mysql-10-169-0-57/etc/sysconfig/network-scripts/ifcfg-eth0
+cd
+history
+virt-install --connect lxc:/// --name mysql-10-169-0-57 --ram 40000 --vcpu 4 --filesystem /virt/mysql-10-169-0-57/,/ --network bridge=br0
+exit
+df -h
+cd /virt
+ls
+cp -ax template mysql-10-169-0-58
+nano -w mysql-10-169-0-58/etc/hostname
+nano -w mysql-10-169-0-58/etc/sysconfig/network-scripts/ifcfg-eth0
+cd
+history | grep virt
+virt-install --connect lxc:/// --name mysql-10-169-0-58 --ram 40000 --vcpu 4 --filesystem /virt/mysql-10-169-0-58/,/ --network bridge=br0
+
+virsh --connect lxc:/// list
+ls /virt
+virsh --connect lxc:/// start mysql-10-169-0-55
+virsh --connect lxc:/// start mysql-10-169-0-56
+virsh --connect lxc:/// start mysql-10-169-0-57
+
+top
+virsh list
+sftp root@10.169.0.135 << EOF
+    get /usr/local/libexec/check_swap /usr/local/libexec/check_swap
+    get /usr/local/libexec/check_disk /usr/local/libexec/check_disk
+    get /usr/local/libexec/check_load /usr/local/libexec/check_load
+    get /etc/firewalld/services/consul.xml /etc/firewalld/services/consul.xml
+EOF
+
+ssh root@10.169.0.135 "cat /root/install_consul_server_centos7.sh" | sh
+history | less
+cat /proc/cpuinfo 
+free
+df -m
+
+
+virsh shutdown mysql-10-169-0-57
+virsh list
+
+virsh undefine mysql-10-169-0-57
+cd /virt/
+ls -lsa 
+rm -rf mysql-10-169-0-57
+ls -lsa 
+virsh list
+
+virsh --connect lxc:/// list
+virsh list
+virsh start mysql-10-169-0-55
+virsh start mysql-10-169-0-56
+virsh start mysql-10-169-0-58
+exit
+tuned-adm profile virtual-host
+history 
+
+######### End of history #################################
+
+#########################################################################################################
+echo xerxes | passwd root --stdin
+
+[root@mysql-10-169-0-55 ~]# cat mysql_populate.sh 
+#!/bin/bash
+yum install -y xinetd 
+rpm -i check-mk-agent-1.4.0p9-1.noarch.rpm
+sed '$ionly_from      = 127.0.0.1 10.170.0.139' /etc/xinetd.d/check_mk  > /tmp/check_mk
+mv -f /tmp/check_mk /etc/xinetd.d/check_mk
+iptables -I INPUT 5 -p tcp -m state --state NEW -m tcp --dport 6556 -j ACCEPT
+iptables-save > /etc/sysconfig/iptables
+mv -f mk_logwatch /usr/lib/check_mk_agent/plugins/
+mv -f mk_mysql /usr/lib/check_mk_agent/plugins/
+service xinetd restart 
+
+#########################################################################################################
+[root@mysql-10-169-0-55 ~]# cat systemd.sh 
+#!/bin/bash
+
+systemctl | grep session-c  | grep abandoned | awk '{print $1}' | xargs -i systemctl stop {}
+
+#########################################################################################################
+[root@mysql-10-169-0-55 ~]# cat puppet 
+#!/bin/bash
+
+if $(test -e /usr/bin/puppet); then
+
+    echo "Puppet already installed!";
+    exit 0;
+
+fi
+
+rm -f /etc/yum.repos.d/cobbler-config.repo;
+
+curl -s http://netadmin-001.sl5.misp.co.uk/yum/CentOS-Base.repo > /etc/yum.repos.d/CentOS-Base.repo
+curl -s http://netadmin-001.sl5.misp.co.uk/yum/epel.repo > /etc/yum.repos.d/epel.repo
+curl -s http://netadmin-001.sl5.misp.co.uk/yum/puppetlabs.repo > /etc/yum.repos.d/puppetlabs.repo
+
+yum clean all
+yum -y install --disablerepo=epel puppet
+yum -y install php-cli
+
+echo "PUPPET_SERVER=puppetmaster-001.sl5.misp.co.uk" >> /etc/sysconfig/puppet
+curl -s http://netadmin-001.sl5.misp.co.uk/puppet/puppet.conf > /etc/puppet/puppet.conf
+
+/sbin/service puppet start
+/sbin/chkconfig puppet on
+
+curl -sk http://netadmin-001.sl5.misp.co.uk/puppet/rstpuppet > /usr/sbin/rstpuppet
+
+#########################################################################################################
+[root@mysql-10-169-0-55 ~]# cat options.bak.php 
+<?php
+$c = mysql_connect("localhost","root","");
+mysql_select_db("mysql",$c);
+
+$databases = mysql_query("show databases");
+while($database = mysql_fetch_assoc($databases)){
+        $database = $database['Database'];
+        if($database == "mysql" || $database == "information_schema") continue;
+        mysql_select_db($database,$c);
+        $tables = mysql_query("SHOW TABLES LIKE '%_options'");
+        if(mysql_num_rows($tables) < 1) continue;
+        while($table = mysql_fetch_row($tables)){
+                $table = $table[0];
+                echo $database . "." . $table . "\n";
+                $testquery = mysql_query("SELECT * FROM " . $table . " WHERE option_name = 'siteurl'");
+                if(@mysql_num_rows($testquery) > 0){
+                        $query = "DELETE FROM " . $database . "." . $table . " WHERE option_name LIKE '%_transient%' OR option_name LIKE '_wc_session_%' OR option_name LIKE '_wc_session_expires_%'";
+                        echo $query . "\n";
+                        mysql_query($query);
+                        echo mysql_error();
+                }
+        }
+}
+?>
+
+#########################################################################################################
+[root@mysql-10-169-0-55 ~]# cat mysql_populate.sh 
+#!/bin/bash
+yum install -y xinetd 
+rpm -i check-mk-agent-1.4.0p9-1.noarch.rpm
+sed '$ionly_from      = 127.0.0.1 10.170.0.139' /etc/xinetd.d/check_mk  > /tmp/check_mk
+mv -f /tmp/check_mk /etc/xinetd.d/check_mk
+iptables -I INPUT 5 -p tcp -m state --state NEW -m tcp --dport 6556 -j ACCEPT
+iptables-save > /etc/sysconfig/iptables
+mv -f mk_logwatch /usr/lib/check_mk_agent/plugins/
+mv -f mk_mysql /usr/lib/check_mk_agent/plugins/
+service xinetd restart 
+
+#########################################################################################################
+[root@mysql-10-169-0-55 ~]# cat /etc/sysconfig/network-scripts/ifcfg-eth0 
+DEVICE=eth0
+BOOTPROTO=static
+ONBOOT=yes
+IPADDR=10.169.0.55
+NETMASK=255.255.192.0
+GATEWAY=10.169.0.1
+
+#########################################################################################################
+
+
+HOw do we ssh to folowing server, web access is OK.
+https://server14.ourlinuxnetwork.com:8443
+Hostname	server14.ourlinuxnetwork.com
+IP address	109.109.131.184
+
+ du -h --max-depth=1 | grep -E "G"  cd mdinagroup.co.uk/
+ ls
+ du -h --max-depth=1 | grep -E "G"
+ cd mdinagroup.co.uk/
+ ls
+ du -h --max-depth=1 | grep -E "G"
+ cd david/
+ ls
+ cd Maildir/
+ ls
+ du -h --max-depth=1 | grep -E "G"
+ du -h --max-depth=1
+ cd new/
+ ls
+ find -mtime +0
+ find -mtime +0 | wc -l
+ pwd
+ ls ./1514271970.M385173P24677V0000000000000087I000000000346E00E.server14.ourlinuxnetwork.com,S=92819
+ cat $_
+ cat $_ | more
+ find -mtime +0 | wc -l
+ ks
+ ls
+ less 1530444129.M362362P19850V000000000000001DI000000000347063B.server14.ourlinuxnetwork.com,S=7726
+ less 1530444129.M362362P19850V000000000000001DI000000000347063B.server14.ourlinuxnetwork.com,S=7726
+ grep Weight ./*
+ grep Weight | wc -l
+ ls ./* | grep 153043 | wc -l
+ grep -il Weight 1530* 
+ grep -il Weight 1530* | xargs rm -f
+ grep -il Weight 1530* 
+ grep -il Weight 153* 
+ ls new/
+ du -h --max-depth=1
+ df -h
+ cd new/
+ grep -il Weight *
+ grep -il Weight 150* | wc -l
+ less 1503097011.M609458P9878V0000000000000087I000000000346C857.server14.ourlinuxnetwork.com,S=94258
+ find -ctime +1
+ find -ctime +2
+ find -ctime +3
+ find -ctime +4
+ find -ctime +20
+ find -ctime +50
+ find -ctime +50 | xargs rm -f
+
+
+
+
+
+
+#########################################################################
+select * from event_log where event like "%cheapcaravanmattresses.com%" limit 50;
+domain=caravanbeddingshop.com
+script/nukesit username
+#########################################################################
+
+#########################################################################
+## Access idrac6 virtual console !!!!!!!!!!
+## From windows xp vm use Ie to connect ot idrac6, use native for console settings
+
+#########################################################################
+/var/sites/r/.zfs/snapshot/1538961001/rickymidas.com
+cp -Rv /var/sites/r/.zfs/snapshot/1538961001/rickymidas.com/public_html/* /var/sites/r/rickymidas.com/public_html/
+cp -Rv /var/sites/r/.zfs/snapshot/1538961001/rickymidas.com/public_html/.htaccess /var/sites/r/rickymidas.com/public_html/
+sudo ls -lah /var/sites/r/rickymidas.com/
+sudo ls -lah /var/sites/r/rickymidas.com/public_html
+sudo chown -R 837096:cpanel /var/sites/r/rickymidas.com/public_html
+sudo ls -lah /var/sites/r/rickymidas.com/public_html
+
+#########################################################################
+
+[root@mysql-10-169-0-175 ~]# cat puppet 
+#!/bin/bash
+
+if $(test -e /usr/bin/puppet); then
+
+    echo "Puppet already installed!";
+    exit 0;
+
+fi
+
+rm -f /etc/yum.repos.d/cobbler-config.repo;
+
+curl -s http://netadmin-001.sl5.misp.co.uk/yum/CentOS-Base.repo > /etc/yum.repos.d/CentOS-Base.repo
+curl -s http://netadmin-001.sl5.misp.co.uk/yum/epel.repo > /etc/yum.repos.d/epel.repo
+curl -s http://netadmin-001.sl5.misp.co.uk/yum/puppetlabs.repo > /etc/yum.repos.d/puppetlabs.repo
+
+yum clean all
+
+#yum -y update
+
+yum -y install --disablerepo=epel puppet
+yum -y install php-cli
+
+echo "PUPPET_SERVER=puppetmaster-001.sl5.misp.co.uk" >> /etc/sysconfig/puppet
+curl -s http://netadmin-001.sl5.misp.co.uk/puppet/puppet.conf > /etc/puppet/puppet.conf
+
+/sbin/service puppet start
+/sbin/chkconfig puppet on
+
+curl -sk http://netadmin-001.sl5.misp.co.uk/puppet/rstpuppet > /usr/sbin/rstpuppet
+chmod +x /usr/sbin/rstpuppet[root@mysql-10-169-0-175 ~]# 
+[root@mysql-10-169-0-175 ~]# cat /usr/sbin/rstpuppet 
+rm -f /var/lib/puppet/state/agent_catalog_run.lock; /usr/sbin/puppet_verbose[root@mysql-10-169-0-175 ~]# 
+[root@mysql-10-169-0-175 ~]# 
+
+
+#########################################################################
+HOW TO DEAL WHEN SITE IS BLACKLISTED
+HOW TO DEAL WHEN THE MAIL IS BLACKLISTED.
+
+
+cat /etc/mailips 
+exim -bpc
+exim -bp
+exim -Mvh 1g8SCe-001K01-Bg
+exim -Mvh 1g8aP3-001NU8-D6
+nano /etc/mailips 
+
+
+Changed
+username and pass
+jr5689@gmail.com
+AeaaetWEETAGeaderte
+
+
+grep cwd=/home /var/log/exim_mainlog | awk '{print $3}' | sort -n | uniq -c | sort -n
+grep redsando /var/log/exim_mainlog
+history 
+exim -bpc
+exim -bp
+history 
+history | grep -B2 -A2 exim 
+exim -bpc
+exim -bp
+exim -Mvh 1g9mvx-003ofD-Qz
+exim -bp
+exim -Mvh 1g9n0n-003syk-KK
+grep cwd=/home /var/log/exim_mainlog | awk '{print $3}' | sort -n | uniq -c | sort -n
+grep redsando /var/log/exim_mainlog
+/scripts/nukesite redsando "Spamming detected"
+cd /home/redsando/
+grep B=authenticated_local_user /var/log/exim_mainlog | sed "s/^.*U=/U=/" | awk '{print $1}' | sort -n | uniq -c | sort -n
+maldet -a
+ls
+exim -Mvh 1g9n0n-003syk-KK
+history | grep exim
+grep cwd=/home /var/log/exim_mainlog | awk '{print $3}' | sort -n | uniq -c | sort -n
+
+iostat -exn 
+
+exim -Mvh 1g7hdk-00CwSp-LE
+exim -bp | grep ravi@zecoschoolwear.co.uk> | awk '{print$3}' | xargs exim -Mrm
+exim -bp | grep ravi@zecoschoolwear.co.uk | awk '{print$3}' | xargs exim -Mrm
+exim -bpc
+exim -bp
+exim -bp | grep | wc -l mainoffice@zecoschoolwear.co.uk
+exim -bp | grep mainoffice@zecoschoolwear.co.uk | wc -l 
+exim -bp | grep 
+exim -Mvh 1g7hz3-00DMdo-Pd
+exim -Mvh 1g7hRq-00CX5O-8B
+exim -Mvc 1g7hRq-00CX5O-8B
+service exim stop
+exiqgrep -if mainoffice@zecoschoolwear.co.uk | xargs exim -Mrm
+exim -bp
+exim -bp | grep ajay@zecoschoolwear.co.uk | wc -l 
+exim -bp | grep ajay@zecoschoolwear.co.uk 
+exim -Mvh 1g7g6q-009j45-9D
+exim -Mvh 1g7hpD-00D8Fb-4V
+exiqgrep -if ajay@zecoschoolwear.co.uk | xargs exim -Mrm
+exim -bpc
+
+##########################################################################################################	
+check_rbl
+This service has 1 comment associated with it	This service is currently in a period of scheduled downtime	Perform Extra Service Actions
+CRITICAL	10-09-2018 10:12:45	0d 0h 30m 34s	2/2	CHECK_RBL CRITICAL - torwood.footholds.net BLACKLISTED on 2 servers of 24 (dnsbl.sorbs.net spam.dnsbl.sorbs.net) 
+##########################################################################################################
+
+
+- find all spammers
+
+- change all passwords
+
+- restart exim
+
+- clear all spam emails
+
+
+
+
+>>> import simplejson
+>>> r = requests.get('https://github.com/timeline.json')
+>>> c = r.content
+>>> j = simplejson.loads(c)
+>>> for itme in j:
+
+
+
+...     print item['repository']['name']
+
+
+import requests
+r = requests.get('https://github.com/akif05/Ansible')
+
+
+14925  2018-10-09 10:30:15  grep redsando /var/log/exim_mainlog
+14926  2018-10-09 10:30:34  grep cwd=/home /var/log/exim_mainlog | awk '{print $3}' | sort -n | uniq -c | sort -n
+14927  2018-10-09 10:30:57  grep cainolse /var/log/exim_mainlog
+14928  2018-10-09 10:31:21 exim -Mvb 1g9oL4-006vX2-7c
+14929  2018-10-09 10:31:41 exim -Mvb 1g9oBO-006W4c-AM
+14930  2018-10-09 10:32:37 exim -bp | grep cainolse@torwood.footholds.net | awk '{print $3}'
+14931  2018-10-09 10:33:28 cd ../cainolse/
+14932  2018-10-09 10:33:31 exim -bp | grep cainolse@torwood.footholds.net | awk '{prin
+
+https://netadmin-002.mh2.misp.co.uk/passdb/cred/detail/4429/
+https://netadmin-002.mh2.misp.co.uk/passdb/cred/detail/10152/
+https://netadmin-002.mh2.misp.co.uk/passdb/cred/detail/34962/
+php-admin
+web-admin
+freezone
+
+
+#########################################################################
+https://manage2.cpanel.net
+#########################################################################
+
+#########################################################################
+select * from emailtable where domain='hellotim.co.uk';
+#########################################################################
+
+#### RDESKTOP FROM LINUX ################################################
+rdesktop -u administrator -d paragon -p sk7cnRFyVRBn0tt8 185.52.24.186 -g 1280x960
+
+#########################################################################
+##################### IP ADDRESS CONFIGURATION ##########################
+
+TYPE="Ethernet"
+PROXY_METHOD="none"
+BROWSER_ONLY="no"
+BOOTPROTO="static"
+DEFROUTE="yes"
+IPV4_FAILURE_FATAL="no"
+IPV6INIT="yes"
+IPV6_AUTOCONF="yes"
+IPV6_DEFROUTE="yes"
+IPV6_FAILURE_FATAL="no"
+IPV6_ADDR_GEN_MODE="stable-privacy"
+NAME="em1"
+UUID="c358b60c-e8d1-4214-9cb6-a2590df5fab2"
+DEVICE="em1"
+ONBOOT="yes"
+IPADDR="185.96.93.5"
+NETMASK="255.255.255.0"
+GATEWAY="185.96.93.1"
+DNS1="8.8.8.8"
+DNS2="8.8.4.4"
+IPV6_PRIVACY="no"
+
+
+#########################################################################
+################# MOVE SERVER TO DIFERENT RACK ##########################
+
+
+1. Decide the racking point and vlan that server is going to sit on
+2. Choice free ip address from the vlan and test if is accessable from some 
+	servers that are backed up.
+3. Configure ip address i ifcf-em1 on backup server
+4. Configure drac address after moved
+5. Backup dns db file and change the ip to new ip 185.11.240.6
+6. Open ssh to ns 
+7. vi /var/named/backup6.srv2.com.db
+:% s/185.52.25.30/185.11.240.6/
+8. Check dns ttl exparation with dig backup6.srv2.com
+
+
+#########################################################################
+VNC over ssh
+
+R510 5987 T40652 -- new r1soft5 server!!!
+
+Here's a nifty little way to do screen sharing over a SSH tunnel. It's been pretty handy when MobileMe doesn't let me do the screen sharing from the finder. If you've got multiple machines that you want to have access to, just increase 6900 to 6901 for the next one as well. Don't forget to update user and machine names. Thanks to Rich Wicentowski for this one.
+
+#!/bin/bash
+ssh USER@REMOTE.MACHINE -fL 6900:127.0.0.1:5900 -o ExitOnForwardFailure=yes sleep 45
+
+open -W vnc://USER@127.0.0.1:6900
+#########################################################################
+
+
+######### FIND ##########################################################
+/usr/bin/find /tmp -mmin +60 -exec rm -v {} \;
+
+#########################################################################
+
+
+############# JUNIPER ##################################################
+#########################################################################
+##################### ROLBACK ###########################################
+# Options
+The currently operational Junos OS configuration is stored in the file juniper.conf, and the last three committed configurations are stored in the files juniper.conf.1, juniper.conf.2, and juniper.conf.3. These four files are located in the directory /config, which is on the router’s flash drive. The remaining 46 previous committed configurations, the files juniper.conf.4 through juniper.conf.49, are stored in the directory /var/db/config, which is on the router’s hard disk.
+none (Optional)—Return to the most recently saved configuration.
+number—(Optional) Configuration to return to. The range of values is from 0 through 49. The most recently saved configuration is number 0, and the oldest saved configuration is number 49. The default is 0.
+
+rollback <number | rescue>
+
+## Configuration
+
+conn_switch switchname connect  
+
+set interface ge-0/0/3family ethernet-switching port-mode access vlan members 760
+set interface ge-0/0/3 description backup10
+
+show | compare
+commit check
+commit commet "My comment"
+
+SYMPTOMS:
+Need to copy and paste a config from a text file on to a J-series router
+
+SOLUTION:
+The command "load replace terminal" can be used to copy a configuration from a text file to the J-series router. After you execute this command the router will start accepting configuration data via the paste option. To exit this mode use the CTRL-D or ^D to exit the terminal mode and return back to the router prompt. 
+
+A sample example is below
+
+root@Router# load replace terminal    
+[Type ^D at a new line to end input]
+interfaces {
+    ge-0/0/0 {
+        unit 0 {
+            family inet {
+                address 192.168.100.1/24;
+            }
+        }
+    }
+    ge-0/0/3 {
+        speed 100m;
+        link-mode full-duplex;
+        gigether-options {
+            no-auto-negotiation;
+        }
+        unit 0 {
+            family inet {
+                    address 172.19.51.157/23;
+            }
+        }
+    }
+}
+^D
+load complete
+[edit]
+root@Router# commit
+########################################################################################################
+
+
+
+
+yum install iptables-services -y;
+systemctl stop firewalld && systemctl start iptables; systemctl start ip6tables;
+systemctl disable firewalld;
+systemctl enable iptables;
+systemctl enable ip6tables;
+
+iptables -I INPUT 5 -p tcp -m state --state NEW -m tcp --dport 6556 -j ACCEPT
+
+$ sudo firewall-cmd --zone=external --add-rich-rule="rule family="ipv4" source address="192.168.11.100/32" port protocol="tcp" port="10000" log prefix="test-firewalld-log" level="info" accept"
+
+$ sudo firewall-cmd --zone=external --add-rich-rule="rule family="ipv4" source address="192.168.11.100" log prefix="test-firewalld-log" level="info" accept"
+
+For example, to add the SSH service for 15 minutes:
+~]# firewall-cmd --add-service=ssh --timeout 15m
+
+
+########## r1soft5 history
+	
+	# Create Logical volume on the storage
+	https://www.linuxtechi.com/create-extend-xfs-filesystem-on-lvm/
+
+   lsblk
+   parted /dev/sdb
+   ls /dev/disk/by-uuid/
+   blkid
+   pvcreate /dev/sdb1
+   vgcreate cl /dev/sdb1
+   lvs
+   vgs
+   lvcreate -L +18.19t -n home cl
+   lvs
+   mkfs.xfs /dev/cl/home
+   mount /dev/cl/home /home/
+   df -hT
+   ls /home/
+
+
+   curl -s netadmin-001.sl5.misp.co.uk/puppet/puppet | bash
+   rstpuppet
+   If gives errors: Got to Puppet: :ref:`Puppet`
+  
+
+ serverbackup-setup --user admin --pass GJRx477Ymz5b0b3I
+ systemctl enable cdp-server
+ systemctl restart cdp-server
+
+  ##################################################################################
+  ############### DRACUT ###########################################################
+
+  # No boot partition found
+  # Interupt boot with space and edit
+  # point root=/dev/sda2  -- to actual boot directory
+  # chtl+x start the os
+  # edit /boot/grub2/grub2.cfg file changing the sdx2 to sda2
+  # run: grub2-mkconfig -o /boot/grub2/grub2.cfg
+  # restart the server
+
+  ###################################################################################
+
+
+
+  ############# ZFS Storage #########################################################
+  
+  # Connect ot control pannel 'sshcpanel'
+  # ssh root@10.170.0.242   or any other lin server(cloud web server)
+  # mount  -- will give the output, look for the sites name or number afected:   10.168.1.250:/storage/sites/a
+  # exit to control pannel again.
+  # from control pannel ssh root@i10.168.1.250
+  # Command run on zpool server
+  zpool status
+  zpool iostat -v 2 5
+  free
+  df -m
+  zfs list -r -t snapshot
+  zfs destroy storage/sites/a@choise_number_from_previous_output
+  htop
+  zfs set readonly=on storage/sites/a
+  zfs set readonly=off storage/sites/a
+  zfs list -r -t snapshot
+  df -m
+  df -m | grep sites/a
+
+  zfs set readonly=off storage/sites/a
+ 
+  zpool status
+  zpool iostat -v 2 10
+  iostat -exn 2 10
+  zpool status
+
+  # copy the output of 'zfs list -r -t snapshot' to /Users/akifyusein/paragon/Scripts/bash_scripts/zfs_list_out.txt
+  ## get the snapshot data with /Users/akifyusein/paragon/Scripts/bash_scripts/snapshot_age.sh 	zfs_list_out.txt
+  ## and delete the snapshot with 'zfs destroy storage/sites/a@number'
+
+ 
+  ###################################################################################
+  ############# WINDOWS VPS #########################################################
+  # ssh to cp1 and execute commands 
+  ssh root@cp01.donhost.co.uk 
+  ## Folow the istructions from
+  https://wiki-001.sl5.misp.co.uk/sysops/index.php/Webfusion#Windows_VPS_only
+
+  ###################################################################################
+ 
+
+  ###################################################################################
+  ########################## CHECK MEMORY USAGE #####################################
+  clear_check_memoryusage
+  /root/puppet_scripts/fixinator/check_memory_usage
+  exit
+   /root/puppet_scripts/fixinator/check_memory_usage
+  cat /etc/system-release
+  puppet -p
+  htop
+  free -m
+  clear_check_memoryusage
+  kickhttpd
+  htop
+  php brute.php
+  exit
+  ###################################################################################
+
+  .. Puppet:
+  Puppet
+  ******
+  ###################################################################################
+  ######################  PUPPET ####################################################
+  // ANCHOR: puppet ID:1.1
+
+   curl -s netadmin-001.sl5.misp.co.uk/puppet/puppet | bash
+   rstpuppet
+  	##   If gives errors:
+  		On the cleint server:
+   			cd /var/lib/puppet/ssl/
+   			mv ssl/ ssl_back
+   			puppet agent -t
+   			rstpuppet
+
+   			serverbackup-setup --user admin --pass GJRx477Ymz5b0b3I
+   			systemctl enable cdp-server
+   			systemctl restart cdp-server
+
+   		On The puppet master clean cert for the client and sign after client request	
+  		ssh root@puppetmaster-001.sl5.misp.co.uk
+  			puppet sert clean server@name.com
+  			puppet sert sign server@name.com 
+  			exit
+
+
+   		puppet agent -t
+   		rstpuppet
+
+ ######################  PUPPET end ###############################################
+
+
+###################################################################################
+############################## DECOMITION CPANNEL SERVER ##########################
+Delete Dns records.   
+
+Tso c-pannel sevices:
+Del dns record for the server.
+https://akira.servers.eqx.misp.co.uk:2087
+
+
+dig -x server-ip_address
+
+ChOose edit dns and put folowing ptr record on search.
+This will open page where you delete the ip address from PTR record.
+174.119.185.in-addr.arpa
+
+# Rmove c-pannel licence from folowing site (expire). credentials on rattic
+https://manage2.cpanel.net
+###################################################################################
+
+###################################################################################
+######################## R1Soft agent install #####################################
+Download the agent on the client sever: 
+http://repo.r1soft.com/release/5.4.3/88/trials/ServerBackup-Enterprise-Agent-win64.zip
+
+On windows server add new futere and role, check out .NET3.5
+Instrall the backup agent 
+reboot the server
+open backup agent 'Authorized Server backup Manger'
+Choose Add...
+Give any name for key ( meaningfull name so "test-001")
+and give the backup server name "r1soft5.footholds.net"
+
+
+###################################################################################
+###################### DATE #######################################################
+On MacOs
+date -r 1538242999 '+%d/%m/%Y:%H:%M'
+
+On Linux
+date --date='@1538242999'  '+%d/%m/%Y:%H:%M'
+date --date='@1538242999' 
+###################################################################################
+
+######################## RSYNC ####################################################
+###################################################################################
+ssh to hl224.redcoruna.com -p 2510     #This is cpanel server
+
+rsync files from backup to the local machine users home dir. Asks for 2 pass: first is sudo and next is remote root.
+sudo rsync -azPHS --ignore-existing root@backup32.srv2.com:/storage/hl224-jmxetflc/.zfs/snapshot/1538242999 /home/HEG-SAMUEL/ 
+ 
+
+ #######################################
+ rsync -azP root@backup28.srv2.com:/storage/hl242-bvgwhbof/.zfs/snapshot/1541065002  /home/RC-Otero/ 
+
+
+
+###################################################################################
+exclude_dir="--exclude 'root@backup32.srv2.com:/storage/hl224-jmxetflc/.zfs/snapshot/1538242999/home_dir/jmxetflc/public_html/anunciolibre/fotos_anuncios'"
+# --exclude 'root@backup32.srv2.com:/storage/hl224-jmxetflc/.zfs/snapshot/1538242999/home_dir/jmxetflc/public_html/anunciolibre/fotos_anuncios'
+
+
+exclude_dirs="--exclude 'root@backup32.srv2.com:/storage/hl224-jmxetflc/.zfs/snapshot/1538242999/home_dir/jmxetflc/public_html/anunciolibre/fotos_anuncios'"
+echo "rsync -avzPH --dry-run $exclude_dirs root@backup32.srv2.com:/storage/hl224-jmxetflc/.zfs/snapshot/1538242999 /home/HEG-SAMUEL/"
+
+
+echo "rsync -azPHS --ignore-existing root@backup32.srv2.com:/storage/hl224-jmxetflc/.zfs/snapshot/1538242999 /home/HEG-SAMUEL/"
+
+
+rsync -avzPH --dry-run $exclude_dirs root@backup32.srv2.com:/storage/hl224-jmxetflc/.zfs/snapshot/1538242999 /tmp
+###################################################################################
+######################## RESTORE BACKUP ###########################################
+https://wiki-001.sl5.misp.co.uk/sysops/index.php/Xbackup#Restore_a_deleted_account
+
+
+############## FILE SIZE ##########################################################
+ls -nRSrh /home | grep -v '^d' | awk '{total += $5} END {print total, "Total";}'
+
+###################################################################################
+######################  Work  with WF #############################################
+On Windows:
+infra@cp01 ~ $ vps 109.104.78.158 | grep Container
+ Container ID      : 510736
+
+
+I found the container id:  Container ID      : 510736. 
+Get-VPSLocation 510736 can’t find the node On WFDDC-MGT.
+If this is the case check Linux section bellow.
+
+
+On Linux:
+https://phab.prgn.misp.co.uk/T35516
+https://phab.prgn.misp.co.uk/maniphest/task/edit/41561/
+
+yes, this is the container ID, node is linux-54-14.vps.ahost.me with IP 94.136.54.14
+ssh linux-54-14.vps.ahost.me
+[root@linux-54-14 ~]# vzlist --all | grep 109.104.79.132
+516359          - stopped      109.104.79.132  lvps109-104-79-132.vps.webfusion.co.uk
+
+vzctl start 516359 --force
+## If not working edit:
+cat /etc/vz/conf/516359.conf
+###################################################################################
+
+###################################################################################
+###################################################################################
+
+###################################################################################
+## New windows 16 Hyperv server to replace hvhost001
+# move the server from D7-U6 to F20 U21.
+D17-U6
+DRAC ip: 10.12.77.6
+
+## Add drives and Ram.
+Raid 1 2x4Tib or Raid10 4x2TBiT 
+Add Ram 8x16Gib
+
+Move to 
+F20 U26
+DRAC ip: 10.12.120.26  -- changed all ready
+
+vlan 57
+ip address on hvhost-004   
+10.0.13.6/24
+defgw 10.10.13.1
+
+
+
+# connect ot MGT01  ==
+Create-Dedi -Name hvhost-004.prgn.misp.co.uk -OS 2016 -Type Internal -ServiceTag 7VX68P2 -IP 10.0.13.6 -Netmask 255.255.255.0 -Gateway 10.0.13.1
+
+
+
+PS C:\> Create-Dedi -Name hvhost-004 -OS 2016 -Type Internal -ServiceTag 7VX68P2 -IP 10.0.13.6 -Netmask 255.255.255.0 -Gateway 10.0.13.1
+
+Name                           Value
+----                           -----
+Administrator                  bho2y81mF2rXj8e7
+###################################################################################
+###################################################################################
+
+
+connected to:
+Switch:	FPC4:uk.slo.prgn.d10.stk2
+Interface:	ge-4/0/39
+
+
+exclude_dirs="--exclude 'root@backup32.srv2.com:/storage/hl224-jmxetflc/.zfs/snapshot/1538242999/home_dir/jmxetflc/public_html/anunciolibre/fotos_anuncios'"
+rsync -avzPH --dry-run $exclude_dirs root@backup32.srv2.com:/storage/hl224-jmxetflc/.zfs/snapshot/1538242999 /home/HEG-SAMUEL/
+
+
+rm -rf /home/HEG-SAMUEL/1538242999/home_dir/jmxetflc/mail/*
+
+
+rsync -aHSPv root@backup32.srv2.com:/storage/hl224-jmxetflc/.zfs/snapshot/1538242999/home_dir/jmxetflc/mail/* /home/HEG-SAMUEL/1538242999/home_dir/jmxetflc/mail/
+tar -zcvf /tmp/jmxetflc-mail.tar.gz /storage/hl224-jmxetflc/.zfs/snapshot/1538242999/home_dir/jmxetflc/mail
+
+scp root@backup32.srv2.com:/tmp/jmxetflc-mail.tar.gz ./
+
+
+/home/HEG-SAMUEL/1538242999/home_dir/jmxetflc/mail/ was more than 6GiB
+Deleted all files and dirs in mail and run:
+  tar -zcvf /tmp/jmxetflc-mail.tar.gz /storage/hl224-jmxetflc/.zfs/snapshot/1538242999/home_dir/jmxetflc/mail
+
+root@hl224 [/home/HEG-SAMUEL]# pwd
+/home/HEG-SAMUEL
+root@hl224 [/home/HEG-SAMUEL]# du -sh --apparent-size  1538242999
+18G     1538242999
+
+[root@backup32 snapshot]# pwd
+/storage/hl224-jmxetflc/.zfs/snapshot
+[root@backup32 snapshot]# du -sh --apparent-size  1538242999
+18G	1538242999
+
+
+###################################################################################
+## Lin servers ##################################################
+     cd /Users/raunaqmalik/Documents/dev/paragon-puppet/puppet-dist/manifests/groups/gridhost/nodes/linservers
+     cp lin-10-170-0-101.gridhost.co.uk.pp lin-10-170-0-69.gridhost.co.uk.pp
+     svn add lin-10-170-0-69.gridhost.co.uk.pp
+     svn commit -m "added manifest for lin-10-170-0-69"
+     cp lin-10-170-0-101.gridhost.co.uk.pp lin-10-170-0-4.gridhost.co.uk.pp
+     svn add lin-10-170-0-4.gridhost.co.uk.pp     
+     svn commit -m "added manifest for lin-10-170-0-4"    
+     cp lin-10-170-0-101.gridhost.co.uk.pp lin-10-170-0-3.gridhost.co.uk.pp
+     svn add lin-10-170-0-3.gridhost.co.uk.pp
+     svn commit -m "added manifest for lin-10-170-0-18"
+     cp lin-10-170-0-101.gridhost.co.uk.pp lin-10-170-0-18.gridhost.co.uk.pp
+     svn add lin-10-170-0-18.gridhost.co.uk.pp
+     svn commit -m "added manifest for lin-10-170-0-18"
+     cd oldlin
+     svn del lin-10-170-0-18.gridhost.co.uk.pp
+     svn commit -m "deleted manifest for old lin-10-170-0-18"
+###################################################################################
+
+###################################################################################
+###### CPANEL SERVERS #############################################################
+
+     cd puppet-dist/
+     svn up
+     ls
+     cd manifests/groups/cpanelserver/nodes/shared_hardened/
+     cp kerberos.servers.prgn.misp.co.uk.pp uranus.servers.prgn.misp.co.uk.pp
+     vi uranus.servers.prgn.misp.co.uk.pp
+     svn add uranus.servers.prgn.misp.co.uk.pp
+     svn commit -m "Added uranus.servers.prgn.misp.co.uk.pp
+
+     https://uranus.servers.prgn.misp.co.uk:2087/logout/?locale=en
+
+     ## Add licence:
+	 https://deploy.prgn.misp.co.uk/api/v1/cpanel/license/add/dedi/?ip=87.247.244.252
+
+	 ## run command on server
+	 /usr/local/cpanel/cpkeyclt
+
+
+     ## GO TO WHM ON THE SERVER
+     # the server name was changed from uranus to quasar!
+     https://quasar.servers.prgn.misp.co.uk:2087/logout/?locale=en
+     new token: 
+     	key: whmcs
+     	API: YYAOJP6ME25LLOW3KD6SLFL3UGN4D4T6
+###################################################################################
+
+######### CSF #####################################################################
+# install csf. First install dependecies
+yum install wget vim perl-libwww-perl.noarch perl-Time-HiRes
+
+cd /usr/src/
+wget https://download.configserver.com/csf.tgz
+tar -xzf csf.tgz
+cd csf
+sh install.sh
+
+## Test csf
+cd /usr/local/csf/bin/
+perl csftest.pl
+
+## Config csf
+systemctl stop firewalld
+
+## Disable/Remove firewalld from the startup:
+systemctl disable firewalld
+
+Then go to the CSF Configuration directory "/etc/csf/" and edit the file "csf.conf" with the vim editor:
+cd /etc/csf/
+vim csf.conf
+
+Change line 11 "TESTING " to "0" for applying the firewall configuration.
+TESTING = "0"
+
+## Start csf. Do not forget to start lfd as well!
+## lfd means Login Failure Daemon
+systemctl start csf
+systemctl start lfd
+
+systemctl enable csf
+systemctl enable lfd
+
+## List rules
+csf -l
+
+## Flush/Stop firewall rules
+csf -f
+
+## Reload the firewall rules.
+csf -r
+
+## Allow an ip and add it to csf.allow
+csf -a 192.168.1.100
+## Result 
+Adding 192.168.1.109 to csf.allow and iptables ACCEPT...
+ACCEPT  all opt -- in !lo out *  192.168.1.109  -> 0.0.0.0/0 
+ACCEPT  all opt -- in * out !lo  0.0.0.0/0  -> 192.168.1.109
+
+## Remove/delete an ip from csf.allow
+csf -ar 192.168.1.100
+
+## Deny an ip and add to csf.deny
+csf -d 192.168.1.100
+
+# Remove/delete and ip from csf.deny
+csf -dr 192.168.1.100
+
+## Remove and unblock all entries from csf.deny
+csf -df
+
+## Search for pattern match on iptalbles e.g : ip, cidr, port number
+csf -g 192.168.1.100
+
+## Do not block ip addresses that are in csf.allow
+## Never will block ip address that is in csf.allow
+## in csf.conf
+	IGNORE_ALLOW = "1"
+
+## Allow Incoming and Outgoing icmp.
+	ICMP_IN = "1"
+	ICMP_OUT = "1"
+
+## Block Certain countrys
+CC_DENY = "CN,UK,US"
+CC_ALL = "ID,MY,DE"
+
+
+###################################################################################
+###################################################################################
+###################################################################################
+###################################################################################
+###################################################################################
+
