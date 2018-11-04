@@ -13,6 +13,8 @@ import os.path
 
 config_file = sys.argv[1]
 url = sys.argv[2]
+url = "https://racktables-001.sl5.misp.co.uk/racktables/index.php?page=object&tab=default&object_id=179"
+
 if config_file == "" or url == "":
     print ("Provied config file and url!")
     sys.exit()
