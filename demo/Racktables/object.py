@@ -9,6 +9,11 @@ import os.path
 import pprint
 from bs4 import BeautifulSoup 
 
+## Implement this as function to which pass th object id and 
+## Retrive data from url:, 
+#  https://racktables-001.sl5.misp.co.uk/racktables/index.php?page=object&tab=default&object_id=179
+
+
 # Rad from html file or use requests tor read from url, check or_new_parser.py
 with open("/Users/akifyusein/object.html") as fp:
     soup = BeautifulSoup(fp, 'lxml')
@@ -49,9 +54,4 @@ if "Shared cPanel" in explisit_tags:
     print(f' FQDN: {fqdn}{nl} Common name: {common_name}{nl} \
 Explisit tags: {explisit_tags}{nl} Tag:{asset_tag}')
     print(line)
-
-#for key, value in object_dict.items():
-    #if key == "Common_name":
-    # print(f'{key} -- {value}')
-#    print(key)
 

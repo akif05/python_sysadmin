@@ -9,7 +9,12 @@ import os.path
 import pprint
 from bs4 import BeautifulSoup 
 
+## Implement this as function to which pass th object id and 
+## Retrive data from url:, 
+#  https://racktables-001.sl5.misp.co.uk/racktables/index.php?page=object&tab=default&object_id=179
 
+
+# Rad from html file or use requests tor read from url, check or_new_parser.py
 with open("/Users/akifyusein/object.html") as fp:
     soup = BeautifulSoup(fp, 'lxml')
 
@@ -17,29 +22,36 @@ with open("/Users/akifyusein/object.html") as fp:
 ## inside the div is the table we need. Get the table
 ## This talbe contains all the objects element in racktables
 div = soup.find("div", {"class":"portlet"})
+
+# read the content between <table> and </talbe> tags in variable table
 table = div.find("table")
 
-results = {}
-nl = '\n'
+# Read all table row in variable rows
 rows = table.find_all("tr")
-aux_th_list = []
-aux_td_list = []
-i = 0
+
+key_list = []
+value_list = []
+object_dict = {}
+nl = '\n'
+
 for row in rows:
-    i += 1
-    # th         :   td
-    # Common name:	zeta
-    aux_th = row.th
-    aux_td = row.td
    
     # Strip out the : that are on th tag string! 
-    aux_th_key = str(aux_th.text.strip().strip(":").replace(" ", "_"))
-    aux_td_val = str(aux_td)
+    key_list.append(str(row.th.text.strip().strip(":").replace(" ", "_")))
+    value_list.append(str(row.td.text.strip()))
 
-    # Create dictionary
-    results[str(aux_th_key)] = aux_td_val
+# Create dictinary from elements read from each row in table
+object_dict = dict(zip(key_list, value_list))
 
-for key, value in results.items():
-    if key == "Common_name":
-        print(key)
+explisit_tags=object_dict.get('Explicit_tags')
+common_name = object_dict.get('Common_name')
+asset_tag = object_dict.get('Asset_tag')
+fqdn = object_dict.get('FQDN')
+line = "=" * 50
+
+if "Shared cPanel" in explisit_tags:
+    print(line)
+    print(f' FQDN: {fqdn}{nl} Common name: {common_name}{nl} \
+Explisit tags: {explisit_tags}{nl} Tag:{asset_tag}')
+    print(line)
 
