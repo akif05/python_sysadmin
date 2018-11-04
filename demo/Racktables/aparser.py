@@ -14,5 +14,8 @@ with open("index.html") as fp:
 table = soup.find("table",{"class":"cooltable"})
 rows = table.find_all('tr')
 
+i = 0
 for row in rows:
-    print(row)
+    i += 1
+    if i>400 and i<402:
+        print(row)
