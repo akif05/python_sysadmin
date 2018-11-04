@@ -36,9 +36,22 @@ for row in rows:
     value_list.append(str(row.td.text.strip()))
 
 # Create dictinary from elements read from each row in table
-object_dict = zip(key_list, value_list)
+object_dict = dict(zip(key_list, value_list))
 
-for key, value in object_dict:
+explisit_tags=object_dict.get('Explicit_tags')
+common_name = object_dict.get('Common_name')
+asset_tag = object_dict.get('Asset_tag')
+fqdn = object_dict.get('FQDN')
+line = "=" * 50
+
+if "Shared cPanel" in explisit_tags:
+    print(line)
+    print(f' FQDN: {fqdn}{nl} Common name: {common_name}{nl} \
+Explisit tags: {explisit_tags}{nl} Tag:{asset_tag}')
+    print(line)
+
+#for key, value in object_dict.items():
     #if key == "Common_name":
-    print(f'{key} -- {value}')
+    # print(f'{key} -- {value}')
+#    print(key)
 

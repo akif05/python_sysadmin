@@ -9,7 +9,7 @@ import os.path
 import pprint
 from bs4 import BeautifulSoup 
 
-
+# Rad from html file or use requests tor read from url, check or_new_parser.py
 with open("/Users/akifyusein/object.html") as fp:
     soup = BeautifulSoup(fp, 'lxml')
 
@@ -17,39 +17,36 @@ with open("/Users/akifyusein/object.html") as fp:
 ## inside the div is the table we need. Get the table
 ## This talbe contains all the objects element in racktables
 div = soup.find("div", {"class":"portlet"})
+
+# read the content between <table> and </talbe> tags in variable table
 table = div.find("table")
 
-results = {}
-nl = '\n'
+# Read all table row in variable rows
 rows = table.find_all("tr")
-aux_th_list = []
-aux_td_list = []
-i = 0
+
+key_list = []
+value_list = []
+object_dict = {}
+nl = '\n'
+
 for row in rows:
-    i += 1
-    # th         :   td
-    # Common name:	zeta
-    aux_th = row.find_all('th')
-    aux_td = row.find_all('td')
    
     # Strip out the : that are on th tag string! 
-    aux_th_key = [x.text.strip().strip(":").replace(" ", "_") for x in aux_th]
-    aux_td_val = [x.text.strip() for x in aux_td]
+    key_list.append(str(row.th.text.strip().strip(":").replace(" ", "_")))
+    value_list.append(str(row.td.text.strip()))
 
-    # Create dictionary
-    results[str(aux_th_key)] = aux_td_val
+# Create dictinary from elements read from each row in table
+object_dict = dict(zip(key_list, value_list))
 
-for key, value in results.items():
-        # print (f'{key}: {value}') 
-        # if key == "['Common_name']":
-        # print(str(value).strip("[]'"))
-        # print(str(key).strip("[]'"))
-    mykey= str(key).strip("[]'")
-    myvalue = str(value).strip("[]'")
-    
-    if key=="Asset_tag"
-        if myvalue==given_tag
-            print(f'{mykey}: {myvalue}')
-    
-# pprint(results)
+explisit_tags=object_dict.get('Explicit_tags')
+#print (object_dict.get('Common_name'))
+#print (object_dict.get('Explicit_tags'))
+
+if "Shared cPanel" in explisit_tags:
+    print(explisit_tags)
+
+#for key, value in object_dict.items():
+    #if key == "Common_name":
+    # print(f'{key} -- {value}')
+#    print(key)
 
