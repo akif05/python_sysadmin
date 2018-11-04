@@ -10,7 +10,7 @@ import pprint
 from bs4 import BeautifulSoup 
 
 
-with open("object.html") as fp:
+with open("/Users/akifyusein/object.html") as fp:
     soup = BeautifulSoup(fp, 'lxml')
 
 ## get <div class="portlet">
