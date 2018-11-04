@@ -29,27 +29,17 @@ for row in rows:
     i += 1
     # th         :   td
     # Common name:	zeta
-    aux_th = row.find_all('th')
-    aux_td = row.find_all('td')
+    aux_th = row.th
+    aux_td = row.td
    
     # Strip out the : that are on th tag string! 
-    aux_th_key = [x.text.strip().strip(":").replace(" ", "_") for x in aux_th]
-    aux_td_val = [x.text.strip() for x in aux_td]
+    aux_th_key = str(aux_th.text.strip().strip(":").replace(" ", "_"))
+    aux_td_val = str(aux_td)
 
     # Create dictionary
     results[str(aux_th_key)] = aux_td_val
 
 for key, value in results.items():
-        # print (f'{key}: {value}') 
-        # if key == "['Common_name']":
-        # print(str(value).strip("[]'"))
-        # print(str(key).strip("[]'"))
-    mykey= str(key).strip("[]'")
-    myvalue = str(value).strip("[]'")
-    
-    if key=="Asset_tag"
-        if myvalue==given_tag
-            print(f'{mykey}: {myvalue}')
-    
-# pprint(results)
+    if key == "Common_name":
+        print(key)
 
