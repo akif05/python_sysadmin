@@ -38,8 +38,5 @@ if r.status_code != 200:
     print(f'Can not get to the URL {url}')
     sys.exit(4)
 
-soup = BeautifulSoup(r.content,'lxml')
-# table = soup.find_all('table')[0]
-table = soup.find_all('table')
-df = pd.read_html(str(table))
-print(df[0].to_json(orient='records'))
+## Print out the the whole file. Can be redirected to fiel from command line
+print(r.text)
